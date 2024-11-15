@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     if (username) {
                         saveTopScore(username, score);
                         nameForm.style.display = "none"; // Hide name input form after submission
-                        finalScoreDisplay.textContent = `New top score: ${score}`;
+                        finalScoreDisplay.textContent = `New Top Score: ${score}`;
                     } else {
                         alert("Please enter your name!");
                     }
