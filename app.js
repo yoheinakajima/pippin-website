@@ -43,12 +43,16 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Function to save the new top score
+    // Function to save the new top score and refresh the page
     function saveTopScore(username, score) {
         const topScoreRef = ref(database, 'topScore');  // Path to save top score
         set(topScoreRef, { username, score })
             .then(() => {
                 topScoreDisplay.innerHTML = `Top Score: <span class="username">${username} (${score})</span>`;
+                // After saving the score, refresh the page after a short delay
+                setTimeout(() => {
+                    location.reload(); // Refresh the page to show the updated top score
+                }, 1000);  // 1 second delay before page refresh
             })
             .catch((error) => {
                 console.error("Error saving top score:", error);  // Log any errors
@@ -125,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     event.preventDefault(); // Prevent form submission
                     const username = playerNameInput.value.trim();
                     if (username) {
-                        saveTopScore(username, score);
+                        saveTopScore(username, score);  // Save top score and refresh page
                         nameForm.style.display = "none"; // Hide name input form after submission
                         finalScoreDisplay.textContent = `New Top Score: ${score}`;
                     } else {
