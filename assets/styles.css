@@ -1,13 +1,13 @@
 :root {
-    --color-heart: #ff69b4;
-    --size-viewport: 85%;
-    --modal-bg-color: rgba(0, 0, 0, 0.5);
-    --modal-content-bg: #fff;
     --button-bg: #ff69b4;
     --button-bg-hover: #ff2693;
-    --button-text-color: white;
     --button-padding: 10px 20px;
+    --button-text-color: white;
+    --modal-bg-color: rgba(0, 0, 0, 0.5);
+    --modal-content-bg: #fff;
     --modal-width: 400px;
+    --size-viewport: 85%;
+    --color-heart: #ff69b4;
 }
 
 * {
@@ -15,18 +15,6 @@
     margin: 0;
     box-sizing: border-box;
     overflow: hidden;
-}
-
-html, body {
-    height: 100%; /* Full height */
-    margin: 0;    /* Remove default margin */
-    display: flex; /* Flexbox for the body */
-    justify-content: center; /* Center horizontally */
-    align-items: center;     /* Center vertically */
-    font-family: "Mynerve", cursive;
-    font-size: 1em;
-    font-weight: 400;
-    text-align: center;
 }
 
 a {
@@ -38,65 +26,67 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Content and layout */
+button {
+    width: 100%;
+    padding: var(--button-padding);
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: var(--button-text-color);
+    background-color: var(--button-bg);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    max-width: 150px;
+}
+
+button:hover {
+    background-color: var(--button-bg-hover);
+}
+
 .content {
     display: flex;
     flex-direction: column;
-    align-items: center;  /* Center content horizontally */
-    justify-content: center; /* Center content vertically */
-    gap: 15px; /* Ensure there’s a gap between items */
-    width: 100%; /* Full width */
-    max-width: 100%; /* Allow content to be as wide as the screen */
-    position: relative;
-    padding: 20px; /* Add some padding to avoid tightness on edges */
-}
-
-#play-button {
-    display: inline-block; /* Make sure it's visible */
-}
-
-.links-container {
-    display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    padding: 20px;
 }
 
-.links-container a {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    background-color: #fff;
-    border-radius: 50%;
-    padding: 8px;
-    text-align: center;
-    transition: background-color 0.3s ease;
-}
-
-.links-container a:hover {
-    background-color: #ff2693;
-}
-
-.links-container svg {
-    fill: #ff69b4;
+#game-over-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    transition: fill 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
 }
 
-.links-container a:hover svg {
-    fill: white;
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Display areas */
-#score-display, #timer-display {
-    display: none;
-    font-size: 2em;
+#final-score {
+    margin-bottom: 20px;
+    font-size: 1.8em;
     font-weight: bold;
-    color: black;
-    margin: 10px;
-    position: absolute;
-    top: 10px;
-    left: 10px;
+    color: #333;
 }
 
 #hearts-pippin {
@@ -152,64 +142,116 @@ a:hover {
     animation: pop 0.3s ease forwards;
 }
 
-/* Modal */
-#game-over-modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+html, body {
     height: 100%;
-    background-color: var(--modal-bg-color);
+    margin: 0;
+    display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
-}
-
-.modal-content {
-    background-color: var(--modal-content-bg);
-    padding: 20px;
-    border-radius: 10px;
+    font-family: "Mynerve", cursive;
+    font-size: 1em;
+    font-weight: 400;
     text-align: center;
-    margin:20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: var(--modal-width);
 }
 
-#final-score {
-    margin-bottom: 20px;
-    font-size: 2em;
-    font-weight: bold;
+#name-form {
+    display: none;
 }
 
-/* Buttons */
-button, .button-link {
-    padding: var(--button-padding);
-    font-size: 16px;
-    background-color: var(--button-bg);
-    color: var(--button-text-color);
-    border: none;
-    cursor: pointer;
+#player-name-input {
+    padding: 10px;
+    width: 100%;
+    max-width: 250px;
+    font-size: 1em;
+    margin-bottom: 15px;
+    border: 2px solid #ddd;
     border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+#player-name-input:focus {
+    border-color: #ff69b4;
+    outline: none;
+}
+
+.links-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.links-container a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 8px;
+    text-align: center;
     transition: background-color 0.3s ease;
 }
 
-button:hover, .button-link:hover {
-    background-color: var(--button-bg-hover);
+.links-container a:hover {
+    background-color: #ff2693;
 }
 
-.button-link {
-    display: inline-block;
-    text-align: center;
-    text-decoration: none;
+.links-container svg {
+    fill: #ff69b4;
+    width: 100%;
+    height: 100%;
+    transition: fill 0.3s ease;
 }
 
-.button-link:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(255, 105, 180, 0.5);
+.links-container a:hover svg {
+    fill: white;
 }
 
-/* Keyframes */
+#timer-display, #top-score-display {
+    display: none;
+    font-size: 2em;
+    font-weight: bold;
+    color: black;
+    margin: 10px;
+    position: absolute;
+    top: 60px;
+    left: 0;
+}
+
+#top-score-display {
+    font-size: 1.5em;
+    top: 0;
+    left: 0;
+    display: block;
+    text-align: left;
+    margin: 5px 10px 0;
+    padding: 0;
+}
+
+#top-score-display .username {
+    display: block;
+    text-transform: uppercase;
+}
+
+@media (max-width: 480px) {
+    .content {
+        padding: 5px;
+    }
+}
+
+@media (max-width: 600px) {
+    .modal-content {
+        width: 90%;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .content {
+        padding: 10px;
+    }
+}
+
 @keyframes floating-heart {
     0% {
         opacity: 0;
@@ -257,18 +299,5 @@ button:hover, .button-link:hover {
     100% {
         transform: scale(0);
         opacity: 0;
-    }
-}
-
-/* Media Queries for responsiveness */
-@media (max-width: 768px) {
-    .content {
-        padding: 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    .content {
-        padding: 5px;
     }
 }
