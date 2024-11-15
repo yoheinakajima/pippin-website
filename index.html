@@ -3,55 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pippin Love</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background-color: #f9f9f9;
-      margin: 0;
-      padding: 20px;
-      text-align: center;
-    }
-    h4 {
-      font-size: 1.5em;
-      color: #333;
-    }
-    svg {
-      margin: 20px 0;
-    }
-    p {
-      font-size: 1.2em;
-      color: #555;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 10px 0;
-      display: flex;
-      gap: 15px;
-    }
-    ul li {
-      display: inline;
-    }
-    ul a {
-      text-decoration: none;
-      color: #0073e6;
-      font-size: 1em;
-    }
-    ul a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <title>pippin loves you</title>
+
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mynerve&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/ico/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="assets/ico/favicon.png"> <!-- For Apple devices -->
+  <link rel="icon" href="assets/ico/favicon.svg" type="image/svg+xml"> <!-- For SVG version -->
+
 </head>
 <body>
 
-  <h4>pippin.love</h4>
-  <svg width="250" height="250" viewBox="0 0 250 250" xmlns="http://www.w3.org/2000/svg">
+  <div id="timer-display">Time: 30</div>
+
+  <div class="content">
+
+    <div id="hearts-pippin" class="hearts">
+      <div class="heart"></div>
+      <div class="heart"></div>
+      <div class="heart"></div>
+      <div class="heart"></div>
+    </div>
+  
+    <!-- Pippin (SVG Unicorn) -->
+  <svg id="pippin" width="300" height="300" viewBox="0 0 250 140" xmlns="http://www.w3.org/2000/svg">
     <!-- Background -->
-    <rect width="250" height="250" fill="#f0f8ff"></rect>
+    <rect width="250" height="250" fill="#ffffff"></rect>
 
     <!-- Unicorn Body -->
     <path d="M80,150 Q60,120 80,90 Q100,60 140,70 Q180,80 160,120 Q150,160 100,160 Z" fill="#fff" stroke="#000" stroke-width="2"></path>
@@ -94,12 +73,30 @@
     <path d="M90,120 Q95,110 100,120" stroke="#000" stroke-width="1" fill="none"></path>
     <path d="M110,130 Q115,120 120,130" stroke="#000" stroke-width="1" fill="none"></path>
   </svg>
-  <p>pippin loves you</p>
-  <ul>
-    <li><a href="https://x.com/pippinlovesyou" target="_blank">X/Twitter</a></li>
-    <li><a href="https://t.me/PippinPortal" target="_blank">Telegram</a></li>
-    <li><a href="https://dexscreener.com/solana/8wwcnqdzjcy5pt7akhupafknv2txca9sq6ybkgzlbvdt" target="_blank">Dex</a></li>
-  </ul>
+  
+    <h1>pippin loves you</h1>
+    <button id="play-button" class="play-button">Play</button>
+    <a href="https://x.com/yoheinakajima/status/1856037470946898095" target="_blank">story of pippin</a>
+    <div class="links-container">
+        <a href="https://dexscreener.com/solana/8wwcnqdzjcy5pt7akhupafknv2txca9sq6ybkgzlbvdt" target="_blank" aria-label="Dexscreener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="#fff" fill-rule="evenodd" viewBox="0 0 252 300" focusable="false" class="chakra-icon custom-euf446" data-darkreader-inline-fill="" style="--darkreader-inline-fill: #e8e6e3;"><path d="M151.818 106.866c9.177-4.576 20.854-11.312 32.545-20.541 2.465 5.119 2.735 9.586 1.465 13.193-.9 2.542-2.596 4.753-4.826 6.512-2.415 1.901-5.431 3.285-8.765 4.033-6.326 1.425-13.712.593-20.419-3.197m1.591 46.886l12.148 7.017c-24.804 13.902-31.547 39.716-39.557 64.859-8.009-25.143-14.753-50.957-39.556-64.859l12.148-7.017a5.95 5.95 0 003.84-5.845c-1.113-23.547 5.245-33.96 13.821-40.498 3.076-2.342 6.434-3.518 9.747-3.518s6.671 1.176 9.748 3.518c8.576 6.538 14.934 16.951 13.821 40.498a5.95 5.95 0 003.84 5.845zM126 0c14.042.377 28.119 3.103 40.336 8.406 8.46 3.677 16.354 8.534 23.502 14.342 3.228 2.622 5.886 5.155 8.814 8.071 7.897.273 19.438-8.5 24.796-16.709-9.221 30.23-51.299 65.929-80.43 79.589-.012-.005-.02-.012-.029-.018-5.228-3.992-11.108-5.988-16.989-5.988s-11.76 1.996-16.988 5.988c-.009.005-.017.014-.029.018-29.132-13.66-71.209-49.359-80.43-79.589 5.357 8.209 16.898 16.982 24.795 16.709 2.929-2.915 5.587-5.449 8.814-8.071C69.31 16.94 77.204 12.083 85.664 8.406 97.882 3.103 111.959.377 126 0m-25.818 106.866c-9.176-4.576-20.854-11.312-32.544-20.541-2.465 5.119-2.735 9.586-1.466 13.193.901 2.542 2.597 4.753 4.826 6.512 2.416 1.901 5.432 3.285 8.766 4.033 6.326 1.425 13.711.593 20.418-3.197"></path><path d="M197.167 75.016c6.436-6.495 12.107-13.684 16.667-20.099l2.316 4.359c7.456 14.917 11.33 29.774 11.33 46.494l-.016 26.532.14 13.754c.54 33.766 7.846 67.929 24.396 99.193l-34.627-27.922-24.501 39.759-25.74-24.231L126 299.604l-41.132-66.748-25.739 24.231-24.501-39.759L0 245.25c16.55-31.264 23.856-65.427 24.397-99.193l.14-13.754-.016-26.532c0-16.721 3.873-31.578 11.331-46.494l2.315-4.359c4.56 6.415 10.23 13.603 16.667 20.099l-2.01 4.175c-3.905 8.109-5.198 17.176-2.156 25.799 1.961 5.554 5.54 10.317 10.154 13.953 4.48 3.531 9.782 5.911 15.333 7.161 3.616.814 7.3 1.149 10.96 1.035-.854 4.841-1.227 9.862-1.251 14.978L53.2 160.984l25.206 14.129a41.926 41.926 0 015.734 3.869c20.781 18.658 33.275 73.855 41.861 100.816 8.587-26.961 21.08-82.158 41.862-100.816a41.865 41.865 0 015.734-3.869l25.206-14.129-32.665-18.866c-.024-5.116-.397-10.137-1.251-14.978 3.66.114 7.344-.221 10.96-1.035 5.551-1.25 10.854-3.63 15.333-7.161 4.613-3.636 8.193-8.399 10.153-13.953 3.043-8.623 1.749-17.689-2.155-25.799l-2.01-4.175z"></path></svg>
+          </a>
+          <a href="https://t.me/PippinPortal" target="_blank" aria-label="Telegram">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 496 512" height="24" width="24" xmlns="http://www.w3.org/2000/svg" data-darkreader-inline-stroke="" style="--darkreader-inline-stroke: currentColor; --darkreader-inline-fill: currentColor;" data-darkreader-inline-fill=""><path d="M248,8C111.033,8,0,119.033,0,256S111.033,504,248,504,496,392.967,496,256,384.967,8,248,8ZM362.952,176.66c-3.732,39.215-19.881,134.378-28.1,178.3-3.476,18.584-10.322,24.816-16.948,25.425-14.4,1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25,5.342-39.5,3.652-3.793,67.107-61.51,68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608,69.142-14.845,10.194-26.894,9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7,18.45-13.7,108.446-47.248,144.628-62.3c68.872-28.647,83.183-33.623,92.511-33.789,2.052-.034,6.639.474,9.61,2.885a10.452,10.452,0,0,1,3.53,6.716A43.765,43.765,0,0,1,362.952,176.66Z"></path></svg>
+          </a>
+          <a href="https://x.com/pippinlovesyou" target="_blank" aria-label="Twitter">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="24" width="24" xmlns="http://www.w3.org/2000/svg" data-darkreader-inline-stroke="" style="--darkreader-inline-stroke: currentColor; --darkreader-inline-fill: currentColor;" data-darkreader-inline-fill=""><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"></path></svg>
+          </a>
+    </div>
+  </div>
+  
+  <div id="game-over-modal">
+    <div class="modal-content">
+      <div id="final-score">you collected 0</div>
+      <button id="play-again-button">Play Again</button>
+    </div>
+  </div>
 
+  <script src="app.js"></script>
 </body>
 </html>
