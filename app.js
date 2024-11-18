@@ -161,13 +161,21 @@ document.addEventListener("DOMContentLoaded", function () {
         resetGame();
     });
 
-    // Play button click listener
+    // Play button click listener (Updated to clear hearts when clicked)
     playButton.addEventListener("click", function () {
+        // Remove all hearts before starting the game
+        heartsContainer.innerHTML = '';
+
+        // Reset score and timer display
+        score = 0;
         playButton.textContent = `Score: ${score}`;
         timerDisplay.style.display = "block";
+        timerDisplay.textContent = `Time: 30`; // Reset timer to 30 seconds
 
+        // Start the countdown timer
         startTimer();
 
+        // Start regenerating hearts at intervals
         setInterval(() => {
             regenerateHeart();
         }, 500); // New heart every 0.5 seconds
