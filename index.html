@@ -2,21 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>pippin loves you</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">  <title>pippin loves you</title>
 
   <link rel="stylesheet" href="assets/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Mynerve&display=swap" rel="stylesheet">
   <link rel="icon" href="assets/ico/favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="assets/ico/favicon.png"> <!-- For Apple devices -->
+  <link rel="apple-touch-icon" href="assets/ico/favicon-96x96.png"> <!-- For Apple devices -->
   <link rel="icon" href="assets/ico/favicon.svg" type="image/svg+xml"> <!-- For SVG version -->
-
+  
 </head>
 <body>
 
   <div id="timer-display">Time: 30</div>
+  <div id="top-score-display"></div>
 
   <div class="content">
 
@@ -30,7 +30,7 @@
     <!-- Pippin (SVG Unicorn) -->
   <svg id="pippin" width="300" height="300" viewBox="0 0 250 140" xmlns="http://www.w3.org/2000/svg">
     <!-- Background -->
-    <rect width="250" height="250" fill="#ffffff"></rect>
+    <rect width="250" height="250" fill="transparent"></rect>
 
     <!-- Unicorn Body -->
     <path d="M80,150 Q60,120 80,90 Q100,60 140,70 Q180,80 160,120 Q150,160 100,160 Z" fill="#fff" stroke="#000" stroke-width="2"></path>
@@ -90,13 +90,26 @@
     </div>
   </div>
   
-  <div id="game-over-modal">
+  <div id="game-over-modal" style="display: none;">
     <div class="modal-content">
-      <div id="final-score">you collected 0</div>
+      <!-- Final score display -->
+      <div id="final-score">You collected 0</div>
+  
+      <!-- Top score display -->
+      <div id="top-score-display">Top Score: </div>
+  
+      <!-- Form to input player name when setting a new top score -->
+      <form id="name-form" style="display: none;">
+        <input type="text" id="player-name-input" maxlength="6" placeholder="Enter your name" required />
+        <button id="submit-button" type="submit">Submit</button>
+      </form>
+  
+      <!-- Play Again button -->
       <button id="play-again-button">Play Again</button>
     </div>
-  </div>
+  </div>  
+  
+  <script  type="module" src="app.js"></script>
 
-  <script src="app.js"></script>
 </body>
 </html>
