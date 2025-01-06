@@ -1,0 +1,68 @@
+<svg 
+  width="80" 
+  height="80" 
+  viewBox="135 30 55 60" 
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <!-- Unicorn Neck & Head -->
+  <path 
+    d="M140,70 Q150,60 160,55 
+       Q170,50 175,60 Q180,70 170,80 
+       Q160,85 150,80 Q140,75 140,70 Z"
+    fill="#fff" 
+    stroke="#000" 
+    stroke-width="1.5"
+  />
+
+  <!-- Horn -->
+  <polygon 
+    points="160,55 155,35 165,35" 
+    fill="#ffd700" 
+    stroke="#000" 
+    stroke-width="1"
+  />
+
+  <!-- Ears -->
+  <path 
+    d="M165,45 Q166,40 160,43" 
+    fill="#fff" 
+    stroke="#000" 
+    stroke-width="1"
+  />
+  <path 
+    d="M170,45 Q171,40 165,43" 
+    fill="#fff" 
+    stroke="#000" 
+    stroke-width="1"
+  />
+
+  <!-- Eyes -->
+  <circle 
+    cx="162" 
+    cy="60" 
+    r="3" 
+    fill="#000"
+  />
+  <circle 
+    cx="158" 
+    cy="60" 
+    r="1.5" 
+    fill="#fff"
+  />
+
+  <!-- Mane -->
+  <path 
+    d="M155,55 Q150,60 155,65 
+       Q150,70 155,75 Q150,80 155,85" 
+    stroke="#ff69b4" 
+    stroke-width="2" 
+    fill="none"
+  />
+  <path 
+    d="M160,55 Q155,60 160,65 
+       Q155,70 160,75 Q155,80 160,85" 
+    stroke="#ff69b4" 
+    stroke-width="2" 
+    fill="none"
+  />
+</svg>

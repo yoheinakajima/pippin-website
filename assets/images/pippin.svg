@@ -1,0 +1,33 @@
+<svg width="500" height="500" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Unicorn Body -->
+  <path d="M160,300 Q120,240 160,180 Q200,120 280,140 Q360,160 320,240 Q300,320 200,320 Z" fill="#fff" stroke="#000" stroke-width="4"></path>
+  <!-- Unicorn Neck and Head -->
+  <path d="M280,140 Q300,120 320,110 Q340,100 350,120 Q360,140 340,160 Q320,170 300,160 Q280,150 280,140 Z" fill="#fff" stroke="#000" stroke-width="4"></path>
+  <!-- Horn -->
+  <polygon points="320,110 310,70 330,70" fill="#ffd700" stroke="#000" stroke-width="2"></polygon>
+  <!-- Ears -->
+  <path d="M330,90 Q332,80 320,86" fill="#fff" stroke="#000" stroke-width="2"></path>
+  <path d="M340,90 Q342,80 330,86" fill="#fff" stroke="#000" stroke-width="2"></path>
+  <!-- Eyes -->
+  <circle cx="324" cy="120" r="6" fill="#000"></circle>
+  <circle cx="316" cy="120" r="3" fill="#fff"></circle>
+  <!-- Mane -->
+  <path d="M310,110 Q300,120 310,130 Q300,140 310,150 Q300,160 310,170" stroke="#ff69b4" stroke-width="4" fill="none"></path>
+  <path d="M320,110 Q310,120 320,130 Q310,140 320,150 Q310,160 320,170" stroke="#ff69b4" stroke-width="4" fill="none"></path>
+  <!-- Legs -->
+  <path d="M200,320 L200,380" stroke="#000" stroke-width="4"></path>
+  <path d="M240,320 L240,380" stroke="#000" stroke-width="4"></path>
+  <path d="M280,320 L280,380" stroke="#000" stroke-width="4"></path>
+  <path d="M320,240 Q330,280 320,320" stroke="#000" stroke-width="4"></path>
+  <!-- Tail -->
+  <path d="M160,300 Q140,310 150,320 Q140,330 160,340" stroke="#ff69b4" stroke-width="4" fill="none"></path>
+  <path d="M150,320 Q160,330 150,340" stroke="#ff69b4" stroke-width="4" fill="none"></path>
+  <!-- Hooves -->
+  <ellipse cx="200" cy="380" rx="10" ry="4" fill="#000"></ellipse>
+  <ellipse cx="240" cy="380" rx="10" ry="4" fill="#000"></ellipse>
+  <ellipse cx="280" cy="380" rx="10" ry="4" fill="#000"></ellipse>
+  <ellipse cx="320" cy="320" rx="10" ry="4" fill="#000"></ellipse>
+  <!-- Details on Body -->
+  <path d="M180,240 Q190,220 200,240" stroke="#000" stroke-width="2" fill="none"></path>
+  <path d="M220,260 Q230,240 240,260" stroke="#000" stroke-width="2" fill="none"></path>
+</svg>
