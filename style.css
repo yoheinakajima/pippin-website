@@ -1,4 +1,427 @@
-html {
-  height: 100%;
-  width: 100%;
+:root {
+  --bg-color: #f5f7e9;
+  --accent-color: #5A8C5B;
+  --secondary-color: #f6fbe7;
+  --font-color: #333;
+  --border-color: #ddd;
+  --highlight: #e0f4df;
+  --heading-font: 'Patrick Hand', cursive;
+  --body-font: 'Inter', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--body-font);
+  background: var(--bg-color);
+  margin: 0;
+  padding: 0;
+  color: var(--font-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: background 0.3s;
+}
+
+/* ----- HEADER ----- */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em;
+  background: #ffffffee;
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.2em;
+  font-weight: 600;
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+.logo img {
+  width: 40px; 
+  margin-right: 0.5em;
+  border-radius: 50%;
+}
+
+nav {
+  display: flex;
+  gap: 1em;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--font-color);
+  font-weight: 500;
+  padding: 0.5em 1em;
+  border-radius: 20px;
+  transition: background 0.3s;
+}
+
+nav a:hover {
+  background: var(--highlight);
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.5em;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--font-color);
+}
+
+/* ----- HERO SECTION ----- */
+.hero {
+  text-align: center;
+  padding: 3em 1em;
+  background: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.hero img {
+  width: 120px;
+  margin-bottom: 1em;
+  filter: drop-shadow(0 4px 4px rgba(0,0,0,0.05));
+  border-radius: 50%;
+}
+
+h1, h2, h3 {
+  font-family: var(--heading-font);
+  color: var(--accent-color);
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 2.2em;
+  margin-bottom: 0.5em;
+}
+
+/* ----- CORE MENUS (HOME) ----- */
+.core-menus {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  padding: 2em 1em;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.menu-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 2em;
+  flex: 1 1 250px;
+  max-width: 300px;
+  box-sizing: border-box;
+  border: 1px solid var(--border-color);
+  transition: box-shadow 0.3s;
+  text-align: center;
+}
+
+.menu-card:hover {
+  box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+}
+
+.menu-card h2 {
+  margin-bottom: 1em;
+}
+
+.menu-card p {
+  margin-bottom: 1.5em;
+}
+
+.menu-card a {
+  display: inline-block;
+  background: var(--accent-color);
+  color: #fff;
+  text-decoration: none;
+  padding: 0.6em 1.2em;
+  border-radius: 20px;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.menu-card a:hover {
+  background: #4e7a4f;
+}
+
+/* ----- ADDITIONAL LINKS SECTION (HOME) ----- */
+.additional-links {
+  padding: 2em 1em;
+  background: var(--secondary-color);
+  text-align: center;
+}
+
+.additional-links h2 {
+  margin-bottom: 1em;
+}
+
+.link-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.link-item {
+  background: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 0.8em 1.2em;
+  text-decoration: none;
+  color: var(--font-color);
+  transition: background 0.3s, color 0.3s;
+  font-weight: 500;
+}
+
+.link-item:hover {
+  background: var(--accent-color);
+  color: #fff;
+}
+
+/* ----- CONTENT SECTIONS ----- */
+.content-section {
+  padding: 2em 1em;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.content-section h1, .content-section h2 {
+  margin-bottom: 0.5em;
+}
+
+.content-section p {
+  line-height: 1.6em;
+  max-width: 700px;
+  margin-bottom: 1.5em;
+}
+
+.content-section ul {
+  padding-left: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+.content-section li {
+  margin-bottom: 0.5em;
+}
+
+/* ----- FLEX GRID FOR CARDS ----- */
+.flex-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5em;
+  margin-top: 1.5em;
+  max-width: 1000px;
+  margin: 1.5em auto 0 auto;
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.5em;
+  flex: 1 1 calc(33% - 3em);
+  min-width: 250px;
+  box-sizing: border-box;
+  border: 1px solid var(--border-color);
+  transition: box-shadow 0.3s;
+  /* Removed justify-content: space-between to align links near the top */
+  display: flex;
+  flex-direction: column;
+  /* links will appear right after content now */
+}
+
+.card:hover {
+  box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+
+.card p {
+  /* Removed flex-grow: 1 to stop pushing the link to bottom */
+  margin-bottom: 1em;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 0.5em;
+  background: var(--accent-color);
+  color: #fff;
+  text-decoration: none;
+  padding: 0.4em 1em;
+  border-radius: 20px;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.card a:hover {
+  background: #4e7a4f;
+}
+
+/* ----- TABS ----- */
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin-top: 2em;
+  flex-wrap: wrap;
+}
+
+.tab-link {
+  background: var(--accent-color);
+  color: #fff;
+  border: 1px solid var(--border-color);
+  padding: 0.8em 1.5em;
+  border-radius: 10px 10px 0 0;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s, border-bottom 0.3s;
+}
+
+.tab-link:hover {
+  background: #4e7a4f;
+}
+
+.tab-link.active {
+  background: #3a5a3d;
+  border-bottom: 1px solid var(--bg-color);
+}
+
+.tab-content {
+  display: none;
+  padding: 1em;
+  border: 1px solid var(--border-color);
+  border-top: none;
+  background: #fff;
+  border-radius: 0 0 10px 10px;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.tab-content h3 {
+  margin-top: 0.5em;
+}
+
+/* ----- DOWNLOAD BUTTON ----- */
+.download-button {
+  display: inline-block;
+  background: var(--accent-color);
+  color: #fff;
+  text-decoration: none;
+  padding: 0.6em 1.2em;
+  border-radius: 20px;
+  font-weight: 500;
+  transition: background 0.3s;
+  margin-top: 1em;
+}
+
+.download-button:hover {
+  background: #4e7a4f;
+}
+
+.download-button.disabled,
+a.disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  pointer-events: none;
+  color: #666;
+}
+
+.download-button.disabled:hover,
+a.disabled:hover {
+  background: #ccc;
+}
+
+/* ----- FOOTER ----- */
+footer {
+  text-align: center;
+  padding: 2em 1em;
+  margin-top: auto;
+  font-size: 0.9em;
+  color: #666;
+  background: #ffffff99;
+  backdrop-filter: blur(10px);
+}
+
+/* ----- RESPONSIVE DESIGN ----- */
+@media (max-width: 900px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    background: #ffffffee;
+    position: absolute;
+    top: 60px;
+    right: 1em;
+    width: 200px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 1em;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .hero {
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 3em 1em;
+  }
+
+  .core-menus {
+    flex-direction: column;
+    align-items: center;
+    max-width: 95%;
+  }
+
+  .menu-card {
+    max-width: 90%;
+  }
+
+  .flex-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    flex: 1 1 100%;
+  }
+
+  .tabs {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tab-link {
+    width: 100%;
+    text-align: center;
+  }
 }
